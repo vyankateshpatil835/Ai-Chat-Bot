@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap');
+
+.landing {
+  background: #0B0B14;
+  color: #EDEBF5;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* NAV */
+.landing-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 48px;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+}
+
+.landing-logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+}
+
+.landing-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-link {
+  color: #EDEBF5;
+  text-decoration: none;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+.nav-link:hover { opacity: 1; }
+
+.nav-cta {
+  background: #F2A65A;
+  color: #0B0B14;
+  padding: 8px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.hero-scene {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  pointer-events: none;
+}
+
+.hero-bubble {
+  position: absolute;
+  background: rgba(184, 169, 255, 0.08);
+  border: 1px solid rgba(184, 169, 255, 0.25);
+  color: #B8A9FF;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  padding: 10px 16px;
+  border-radius: 10px;
+  max-width: 220px;
+  transform-style: preserve-3d;
+  transition: opacity 0.2s ease-out;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+}
+
+.hero-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: #F2A65A;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 20px 0;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  opacity: 0.7;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.hero-button {
+  display: inline-block;
+  background: #F2A65A;
+  color: #0B0B14;
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 32px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  opacity: 0.4;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* FEATURES */
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 120px 48px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  border: 1px solid rgba(237, 235, 245, 0.1);
+  border-radius: 12px;
+  padding: 28px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.feature-card-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.feature-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  opacity: 0.65;
+  line-height: 1.6;
+}
+
+/* FINAL CTA */
+.final-cta {
+  text-align: center;
+  padding: 140px 24px;
+}
+
+.final-cta h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  margin-bottom: 12px;
+}
+
+.final-cta p {
+  opacity: 0.6;
+  margin-bottom: 28px;
+}
+
+/* FOOTER */
+.landing-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 48px;
+  font-size: 0.8rem;
+  opacity: 0.4;
+  border-top: 1px solid rgba(237, 235, 245, 0.08);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .features { grid-template-columns: 1fr; padding: 80px 24px; }
+  .hero-bubble { display: none; } /* 3D bubbles get busy on small screens */
+  .landing-nav { padding: 16px 24px; }
+}
+
+/* ACCESSIBILITY: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-bubble, .feature-card {
+    transition: none !important;
+  }
+}
