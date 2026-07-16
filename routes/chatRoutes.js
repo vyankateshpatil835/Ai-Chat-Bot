@@ -7,6 +7,7 @@ const {
   getChatById,
   sendMessage,
   renameChat,
+  togglePinChat,
   deleteChat
 } = require('../controllers/chatController');
 
@@ -17,6 +18,7 @@ router.get('/', getChats);
 router.get('/:chatId', getChatById);
 router.post('/:chatId/messages', sendMessage);
 router.patch('/:chatId', renameChat);
+router.patch('/:chatId/pin', togglePinChat);
 router.delete('/:chatId', deleteChat);
 
 module.exports = router;

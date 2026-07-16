@@ -4,9 +4,3 @@
           <Link to="/login" className="nav-link">Log in</Link>
           <Link to="/signup" className="nav-cta">Get started</Link>
         </div>
-
-becuase of this warning (node:16432) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
-
-(Use `node --trace-warnings ...` to show where the warning was created)
-
-frontend shows red message and after refresh the page we get a ans 

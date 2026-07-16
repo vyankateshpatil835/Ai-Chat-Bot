@@ -27,6 +27,10 @@ const chatSchema = new mongoose.Schema(
       type: String,
       default: 'New Chat',
     },
+    pinned: {
+      type: Boolean,
+      default: false,
+    },
     messages: [messageSchema],
   },
   { timestamps: true }

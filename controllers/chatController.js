@@ -15,8 +15,8 @@ exports.createChat = async (req, res) => {
 exports.getChats = async (req, res) => {
   try {
     const chats = await Chat.find({ userId: req.userId })
-      .select('title createdAt updatedAt') // don't send full messages for the sidebar list
-      .sort({ updatedAt: -1 });
+      .select('title pinned createdAt updatedAt') // don't send full messages for the sidebar list
+      .sort({ pinned: -1, updatedAt: -1 });
     res.status(200).json(chats);
   } catch (error) {
     res.status(500).json({ message: 'Failed to fetch chats', error: error.message });
@@ -99,5 +99,19 @@ exports.deleteChat = async (req, res) => {
     res.status(200).json({ message: 'Chat deleted', chatId: req.params.chatId });
   } catch (error) {
     res.status(500).json({ message: 'Failed to delete chat', error: error.message });
+  }
+};
+
+// PATCH /api/chats/:chatId/pin
+exports.togglePinChat = async (req, res) => {
+  try {
+    const chat = await Chat.findOne({ _id: req.params.chatId, userId: req.userId });
+    if (!chat) return res.status(404).json({ message: 'Chat not found' });
+
+    chat.pinned = !chat.pinned;
+    await chat.save();
+    res.status(200).json(chat);
+  } catch (error) {
+    res.status(500).json({ message: 'Failed to update pin', error: error.message });
   }
 };
