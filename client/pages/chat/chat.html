@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Assistant — NeuroVerse AI</title>
+
+  <!-- Fonts and icons -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@600;700&amp;display=swap"
+    rel="stylesheet" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <script id="tailwind-config">
+    try {
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#fff6eb",
+              "primary-container": "#ffd67a",
+              "primary-fixed-dim": "#e9c268",
+              "on-primary-container": "#795b06",
+              "on-surface-variant": "#d1c5b2",
+              "on-surface": "#e9e1d7",
+            }
+          }
+        }
+      };
+    } catch (_e) { }
+  </script>
+
+  <link rel="stylesheet" href="../../index.css">
+  <link rel="stylesheet" href="./chat.css">
+</head>
+
+<body class="text-on-background min-h-screen bg-black">
+  <div id="app-shell">
+    <main class="chat-page">
+      <aside class="chat-sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-brand">
+            <a class="wordmark" href="/" aria-label="NeuroVerse AI Home">NEUROVERSE</a>
+            <button id="close-sidebar" class="sidebar-toggle material-symbols-outlined" aria-label="Close sidebar"
+              title="Close sidebar">left_panel_close</button>
+          </div>
+          <button id="new-chat" class="primary-button">+ New conversation</button>
+        </div>
+        <div id="chat-list" class="chat-list"></div>
+        <button id="logout" class="text-button">Sign out</button>
+      </aside>
+      <section class="chat-main">
+        <header class="chat-topbar">
+          <div class="topbar-left">
+            <button hidden id="open-sidebar" class="sidebar-toggle material-symbols-outlined" aria-label="Open sidebar"
+              title="Open sidebar">left_panel_open</button>
+          </div>
+          <div class="topbar-center">
+            <p class="eyebrow">AI ASSISTANT</p>
+            <h1 id="chat-title">New conversation</h1>
+          </div>
+          <div class="topbar-right">
+            <p id="app-error" class="app-error" role="alert"></p>
+          </div>
+        </header>
+        <div id="messages" class="messages">
+          <div class="empty-state">
+            <span class="material-symbols-outlined">auto_awesome</span>
+            <h2>How can I help today?</h2>
+            <p>Ask anything, brainstorm ideas, or explore a new subject.</p>
+          </div>
+        </div>
+        <form id="message-form" class="message-form">
+          <input id="message-input" placeholder="Message NeuroVerse AI" autocomplete="off" required />
+          <button class="primary-button" type="submit">Send <span aria-hidden="true">→</span></button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="./chat.js"></script>
+</body>
+
+</html>

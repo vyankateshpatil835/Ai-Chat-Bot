@@ -1,0 +1,114 @@
+/* Auth Page Dedicated CSS */
+
+.auth-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px 20px;
+  background: radial-gradient(circle at 70% 10%, rgba(233, 194, 104, 0.16), transparent 28%), #100e0b;
+}
+
+.wordmark {
+  color: #f5deb0;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-decoration: none;
+}
+
+.auth-page > .wordmark {
+  position: fixed;
+  top: 28px;
+  left: 32px;
+}
+
+.auth-card {
+  width: min(100%, 440px);
+  padding: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  background: rgba(27, 24, 19, 0.94);
+  box-shadow: 0 28px 100px rgba(0, 0, 0, 0.5);
+}
+
+.auth-card h1 {
+  font-size: clamp(1.7rem, 4vw, 2.25rem);
+  line-height: 1.12;
+  margin: 7px 0 10px;
+}
+
+.auth-intro {
+  color: #bcb5a9;
+  line-height: 1.55;
+}
+
+.auth-card form {
+  display: grid;
+  gap: 15px;
+  margin-top: 24px;
+}
+
+.auth-card label {
+  display: grid;
+  gap: 7px;
+  color: #ded6ca;
+  font-size: 0.9rem;
+}
+
+.auth-card input {
+  width: 100%;
+  border: 1px solid #5a5145;
+  background: #0d0c0a;
+  color: inherit;
+  border-radius: 9px;
+  padding: 13px;
+}
+
+.auth-card input:focus {
+  outline: 2px solid #e9c268;
+  outline-offset: 1px;
+}
+
+.password-control {
+  position: relative;
+  display: block;
+}
+
+.password-control input {
+  padding-right: 46px;
+}
+
+.password-toggle {
+  border: 0;
+  background: transparent;
+  color: #bcb5a9;
+  cursor: pointer;
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 5px;
+}
+
+.auth-switch {
+  margin: 22px 0 0;
+  text-align: center;
+  color: #bcb5a9;
+}
+
+.auth-switch a {
+  color: #f5deb0;
+}
+
+@media (max-width: 680px) {
+  .auth-page > .wordmark {
+    position: static;
+    margin-bottom: 34px;
+  }
+  .auth-page {
+    align-content: center;
+  }
+  .auth-card {
+    padding: 30px 24px;
+  }
+}

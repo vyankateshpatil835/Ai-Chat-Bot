@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Sign Up — NeuroVerse AI</title>
+  
+  <!-- Fonts and icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+  
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  
+  <script id="tailwind-config">
+    try {
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#fff6eb",
+                        "primary-container": "#ffd67a",
+                        "primary-fixed-dim": "#e9c268",
+                        "on-primary-container": "#795b06",
+                        "on-surface-variant": "#d1c5b2",
+                        "on-surface": "#e9e1d7",
+                    }
+                }
+            }
+        };
+    } catch (_e) {}
+  </script>
+
+  <link rel="stylesheet" href="../../index.css">
+  <link rel="stylesheet" href="./auth.css">
+</head>
+<body class="text-on-background min-h-screen bg-black">
+  <div id="app-shell">
+    <main class="auth-page">
+      <a class="wordmark" href="/">NEUROVERSE AI</a>
+      <section class="auth-card">
+        <p class="eyebrow">CREATE ACCOUNT</p>
+        <h1 class="text-primary font-bold">Start your AI journey</h1>
+        <p class="auth-intro">Create an account to save and continue your conversations.</p>
+        <p id="app-error" class="app-error" role="alert"></p>
+        <form id="auth-form">
+          <label>Name
+            <input name="name" autocomplete="name" required />
+          </label>
+          <label>Email
+            <input name="email" type="email" autocomplete="off" autocapitalize="none" spellcheck="false" required />
+          </label>
+          <label>Password
+            <span class="password-control">
+              <input id="password" name="password" type="password" autocomplete="new-password" minlength="6" required />
+              <button id="toggle-password" class="password-toggle material-symbols-outlined" type="button" aria-label="Show password" title="Show password">visibility</button>
+            </span>
+          </label>
+          <button class="primary-button" id="auth-submit" type="submit">Create account</button>
+        </form>
+        <p class="auth-switch">Already have an account? <a href="./login.html">Sign in</a></p>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="./signup.js"></script>
+</body>
+</html>
