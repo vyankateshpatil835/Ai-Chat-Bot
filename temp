@@ -1,6 +1,0 @@
-{ "name": "Vyanky", "email": "test@test.com", "password": "test123" }
-{ "name": "Vyanky", "email": "vyanky@gmail.com", "password": "Vyanky@123" }
-<div className="landing-nav-links">
-          <Link to="/login" className="nav-link">Log in</Link>
-          <Link to="/signup" className="nav-cta">Get started</Link>
-        </div>
